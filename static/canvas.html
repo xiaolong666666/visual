@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Canvas</title>
+  </head>
+  <body>
+    <canvas id="canvas" width="400" hight="400"></canvas>
+    <script>
+      // 获取 canvas 元素
+      const canvas = document.getElementById("canvas");
+      // 获取 2D 上下文
+      const ctx = canvas.getContext("2d");
+      // 绘制样式 橙色
+      ctx.fillStyle = "orange";
+      // API 绘制 rect
+      ctx.fillRect(20, 20, 100, 100);
+    </script>
+  </body>
+</html>

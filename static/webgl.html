@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebGL</title>
+    <script src="https://webglfundamentals.org/webgl/resources/webgl-utils.js"></script>
+  </head>
+  <body>
+    <canvas id="webgl" width="400" hight="400"></canvas>
+    <script>
+      // 获取 WebGL 上下文
+      const canvas = document.getElementById("webgl");
+      const gl = canvas.getContext("webgl");
+
+      if (!gl) {
+        throw new Error(
+          "Unable to initialize WebGL. Your browser or device may not support it."
+        );
+      }
+
+      // 顶点 vertex shader
+      const vertexShaderSource = `
+        void main() {
+          // gl_xxx 为 webgl 内置
+          gl_Position = vec4(0, 0, 0, 1); // 坐标
+          gl_PointSize = 100.0; // 大小
+        }
+      `;
+
+      // 片元 fragment shader
+      const fragmentShaderSource = `
+        void main() {
+          gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0);
+        }
+      `;
+
+      // shader 程序
+      const program = webglUtils.createProgramFromSources(gl, [
+        vertexShaderSource,
+        fragmentShaderSource,
+      ]);
+      gl.useProgram(program);
+
+      const offset = 0; // 偏移
+      const count = 3; // 个数
+      // gl.POINTS 内置绘制方式
+      // 绘制函数 drawArrays
+      gl.drawArrays(gl.POINTS, offset, count);
+    </script>
+  </body>
+</html>
