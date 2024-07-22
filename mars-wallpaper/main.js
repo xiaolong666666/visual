@@ -1,4 +1,5 @@
 import * as Three from "three";
+// import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import Tween from "@tweenjs/tween.js";
 
 const RADIUS = 300;
@@ -54,6 +55,9 @@ const Options = {
   },
 };
 
+// GLB模型的URL
+// const modelUrl = "/public/assets/mars1.glb";
+
 let mode = "mod1";
 
 // 创建场景
@@ -86,6 +90,24 @@ const sphere = new Three.Mesh(geometry, material);
 sphere.position.set(0, 0, 0);
 sphere.receiveShadow = true;
 scene.add(sphere);
+
+// 加载模型
+// const loader = new GLTFLoader();
+// loader.load(
+//   modelUrl,
+//   (gltf) => {
+//     const model = gltf.scene;
+//     console.log("model", model);
+//     model.scale.set(1, 1, 1);
+//     model.position.set(RADIUS, RADIUS, RADIUS);
+//     // model.rotation.set(0, Math.PI / 2, 0);
+//     scene.add(model);
+//   },
+//   undefined,
+//   (error) => {
+//     console.error(error);
+//   }
+// );
 
 function setCamera() {
   // 设置默认值
