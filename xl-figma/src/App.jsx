@@ -1,20 +1,25 @@
-import React, { useState } from "react";
+import React from "react";
+import styled from "styled-components";
 import Draw from "@components/draw";
 import Tools from "@components/tools";
-import styled from "styled-components";
+import DotGrid from "@components/dot-bg";
+import { useDirective } from "@utils/hooks";
 
 const Container = styled.div`
+  position: absolute;
   width: 100%;
   height: 100%;
-  background-color: rgba(240, 242, 245, 1);
+  background-color: transparent;
 `;
 
 const App = () => {
-  const [brush, setBrush] = useState("pencil");
+  const [directive] = useDirective();
+
   return (
     <Container>
-      <Draw brush={brush} />
-      <Tools setBrush={setBrush} />
+      <Draw directive={directive} />
+      <Tools directive={directive} />
+      <DotGrid />
     </Container>
   );
 };

@@ -1,0 +1,28 @@
+.reset-cursor {
+  position: absolute;
+  z-index: 9;
+}
+
+.reset-cursor.cursor-pencil .upper-canvas {
+  cursor: url("/assets/cursor-pencil.png") 0 16, auto !important;
+}
+
+.reset-cursor.cursor-select .upper-canvas {
+  cursor: url("/assets/cursor-select.svg") 16 14, auto !important;
+}
+
+.reset-cursor.cursor-hand .upper-canvas {
+  cursor: url("/assets/cursor-hand.svg") 10 10, auto !important;
+}
+
+.reset-cursor.cursor-eraser .upper-canvas {
+  cursor: url("/assets/cursor-eraser.svg") 12 28, auto !important;
+}
+
+.reset-cursor.cursor-light .upper-canvas {
+  cursor: url("/assets/cursor-light.svg") 10 26, auto !important;
+}
+
+.reset-cursor.cursor-tape .upper-canvas {
+  cursor: url("/assets/cursor-tape.svg") 10 26, auto !important;
+}

@@ -1,32 +1,13 @@
 import { useState, useEffect, useRef } from "react";
-import * as fabric from "fabric";
 import { BRUSH_MAPPER } from "@constants";
-import {
-  getPencilBrush,
-  getCircleBrush,
-  getSprayBrush,
-  getPatternBrush,
-} from "@utils/brush";
+import { getBrush } from "@utils/brush";
+import { getCursor } from "@utils/cursor";
+import "./index.css";
 
-const Draw = ({ brush }) => {
+const Draw = ({ directive }) => {
   const canvasRef = useRef(null);
   const fabricCanvasRef = useRef(null);
-  // const [isErasing, setIsErasing] = useState(false);
-
-  const getBrush = (fabricCanvas) => {
-    switch (brush) {
-      case BRUSH_MAPPER.PENCIL:
-        return getPencilBrush(fabricCanvas);
-      case BRUSH_MAPPER.CIRCLE:
-        return getCircleBrush(fabricCanvas);
-      case BRUSH_MAPPER.SPRAY:
-        return getSprayBrush(fabricCanvas);
-      case BRUSH_MAPPER.PATTERN:
-        return getPatternBrush(fabricCanvas);
-      default:
-        return getPencilBrush(fabricCanvas);
-    }
-  };
+  const [cursorClassName, setCursorClassName] = useState("cursor-select");
 
   useEffect(() => {
     const options = {
@@ -38,7 +19,7 @@ const Draw = ({ brush }) => {
     const fabricCanvas = new fabric.Canvas(canvasRef.current, options);
 
     // 设置画笔模式
-    fabricCanvas.freeDrawingBrush = getBrush(fabricCanvas);
+    fabricCanvas.freeDrawingBrush = getBrush(directive, fabricCanvas);
 
     fabricCanvasRef.current = fabricCanvas;
 
@@ -53,18 +34,29 @@ const Draw = ({ brush }) => {
   }, []);
 
   useEffect(() => {
-    fabricCanvasRef.current.freeDrawingBrush = getBrush(
-      fabricCanvasRef.current
-    );
-  }, [fabricCanvasRef.current, brush]);
+    if (Object.values(BRUSH_MAPPER).includes(directive)) {
+      fabricCanvasRef.current.isDrawingMode = true;
+      fabricCanvasRef.current.freeDrawingBrush = getBrush(
+        directive,
+        fabricCanvasRef.current,
+        {}
+      );
+    } else {
+      fabricCanvasRef.current.isDrawingMode = false;
+    }
+    setCursorClassName(getCursor(directive));
+  }, [fabricCanvasRef.current, directive]);
 
-  // useEffect(() => {
-  //   if (fabricCanvasRef.current) {
-  //     fabricCanvasRef.current.isDrawMode = !isErasing;
-  //   }
-  // }, [isErasing, fabricCanvasRef.current]);
-
-  return <canvas ref={canvasRef} width="100vw" height="100vh" />;
+  return (
+    <div className={cursorClassName}>
+      <canvas
+        ref={canvasRef}
+        width="100vw"
+        height="100vh"
+        style={{ cursor: "unset" }}
+      />
+    </div>
+  );
 };
 
 export default Draw;
