@@ -12,6 +12,13 @@ export const MAIN_MAPPER = {
   GRAPH: "graph",
 };
 
+export const STATIC_MAPPER = {
+  TEXT: "text",
+  SECTION: "section",
+  TABLE: "table",
+  STAMP: "stamp',",
+};
+
 export const IMAGE_MAPPER = {
   IMAGE: "image",
 };
@@ -21,5 +28,6 @@ export const DIRECTIVE_MAPPER = {
   HAND: "hand",
   ...BRUSH_MAPPER,
   ...MAIN_MAPPER,
+  ...STATIC_MAPPER,
   ...IMAGE_MAPPER,
 };
