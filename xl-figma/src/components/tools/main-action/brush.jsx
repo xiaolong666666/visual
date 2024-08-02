@@ -6,7 +6,7 @@ import BrushPencil from "@assets/tools-brush-pencil.svg?react";
 import BrushLight from "@assets/tools-brush-light.svg?react";
 import BrushTape from "@assets/brush-tape";
 import BrushEraser from "@assets/brush-eraser";
-import { _SWITCH_DIRECTIVE_ } from "@constants";
+import { onSwitchDirective } from "@utils";
 
 const { PENCIL, LIGHT, TAPE, ERASER } = BRUSH_MAPPER;
 
@@ -77,12 +77,6 @@ const Brush = ({ directive }) => {
     }
   }, [directive]);
 
-  const onSwitchDirective = (v) => {
-    if (directive !== v) {
-      _EE_.emit(_SWITCH_DIRECTIVE_, v);
-    }
-  };
-
   const getBrushSvg = () => {
     switch (currentBrush) {
       case PENCIL:
@@ -104,7 +98,7 @@ const Brush = ({ directive }) => {
         <BrushTarget
           $directive={directive}
           $isBrush={isBrush}
-          onClick={() => onSwitchDirective(PENCIL)}
+          onClick={() => onSwitchDirective(PENCIL, directive)}
         >
           {getBrushSvg()}
         </BrushTarget>

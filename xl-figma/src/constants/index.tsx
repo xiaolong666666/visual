@@ -8,7 +8,7 @@ export const BRUSH_MAPPER = {
 };
 
 export const MAIN_MAPPER = {
-  NODE: "node",
+  NOTE: "note",
   GRAPH: "graph",
 };
 

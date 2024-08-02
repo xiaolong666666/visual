@@ -1,16 +1,16 @@
 <svg width="104" height="104" viewBox="-20 -20 104 104" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g>
-<path d="M0.459717 0.680176L104.46 0.680243V104.68H0.459717V2.09514V0.680176Z" fill="rgba(175, 188, 207, 1)" style="clip-path: url(#stickyMaskV3-1);"></path>
+<path d="M0.459717 0.680176L104.46 0.680243V104.68H0.459717V2.09514V0.680176Z" fill="rgb(217, 184, 255)" style="clip-path: url(#stickyMaskV3-1);"></path>
 <g class="delightful_toolbar--stickyCurlV3--6kp8i">
 <mask id="stickyCurlMaskV3-1" maskUnits="userSpaceOnUse" x="0" y="0" width="84" height="84" style="mask-type: alpha;">
 <path d="M31.9819 3.8766C34.7398 1.38156 38.3262 7.51147e-07 42.0452 2.10768e-06L104 2.47061e-05V104H3.61353e-05L3.37915e-06 39.4677C1.22757e-06 35.2289 1.7934 31.188 4.9367 28.3443L31.9819 3.8766Z" fill="white"></path>
 </mask>
 <g mask="url(#stickyCurlMaskV3-1)">
-<path d="M104 6.74129e-05L54.8928 48.5492L0 104V0L104 6.74129e-05Z" fill="rgba(175, 188, 207, 1)" class="delightful_toolbar--easeInDltItemFill--rGBLG"></path>
+<path d="M104 6.74129e-05L54.8928 48.5492L0 104V0L104 6.74129e-05Z" fill="rgb(217, 184, 255)" class="delightful_toolbar--easeInDltItemFill--rGBLG"></path>
 <g filter="url(#stickyCurlBlurFilter)">
 <rect x="-26" y="50.6831" width="96.831" height="16.7797" transform="rotate(-41.9127 -26 50.6831)" fill="black" fill-opacity="0.3"></rect>
 </g>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M31.526 4.26953L3.2583 29.8513C10.3683 23.4168 26.3782 24.6229 26.3782 24.6229C26.3782 24.6229 25.0586 10.1224 31.526 4.26953Z" fill="rgba(175, 188, 207, 1)" class="delightful_toolbar--easeInDltItemFill--rGBLG"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M31.5262 4.26953L3.25854 29.8513C10.3686 23.4168 26.3784 24.6229 26.3784 24.6229C26.3784 24.6229 25.0588 10.1224 31.5262 4.26953Z" fill="url(#paint0_linear_221_5067)"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M31.526 4.26953L3.2583 29.8513C10.3683 23.4168 26.3782 24.6229 26.3782 24.6229C26.3782 24.6229 25.0586 10.1224 31.526 4.26953Z" fill="rgb(217, 184, 255)" class="delightful_toolbar--easeInDltItemFill--rGBLG"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M31.5262 4.26953L3.25854 29.8513C10.3686 23.4168 26.3784 24.6229 26.3784 24.6229C26.3784 24.6229 25.0588 10.1224 31.5262 4.26953Z" fill="url(#paint0_linear_221_5067)"></path>
 </g>
 </g>
 </g>

@@ -4,7 +4,8 @@ import BrushPencil from "@assets/tools-brush-pencil.svg?react";
 import BrushLight from "@assets/tools-brush-light.svg?react";
 import BrushTape from "@assets/brush-tape";
 import BrushEraser from "@assets/brush-eraser";
-import { _SWITCH_DIRECTIVE_, BRUSH_MAPPER } from "@constants";
+import { BRUSH_MAPPER } from "@constants";
+import { onSwitchDirective } from "@utils";
 
 const { PENCIL, LIGHT, TAPE, ERASER } = BRUSH_MAPPER;
 
@@ -63,18 +64,13 @@ const Brush = ({ directive }) => {
     },
   ];
 
-  const onSwitchDirective = (v) => {
-    if (directive !== v) {
-      _EE_.emit(_SWITCH_DIRECTIVE_, v);
-    }
-  };
   return (
     <FlexBox>
       {brushList.map(({ Icon, value }) => (
         <FlexItem key={value}>
           <ButtonBox
             $current={directive === value}
-            onClick={() => onSwitchDirective(value)}
+            onClick={() => onSwitchDirective(value, directive)}
           >
             <Icon />
           </ButtonBox>

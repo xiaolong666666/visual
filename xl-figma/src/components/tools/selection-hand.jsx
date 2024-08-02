@@ -3,7 +3,8 @@ import { Flex } from "antd";
 import styled, { css } from "styled-components";
 import SelectionSvg from "@assets/tools-selection.svg?react";
 import HandSvg from "@assets/tools-hand.svg?react";
-import { _SWITCH_DIRECTIVE_, DIRECTIVE_MAPPER } from "@constants";
+import { DIRECTIVE_MAPPER } from "@constants";
+import { onSwitchDirective } from "@utils";
 
 const { SELECTION, HAND } = DIRECTIVE_MAPPER;
 
@@ -30,23 +31,17 @@ const Box = styled.div`
 `;
 
 const SelectionHand = ({ directive }) => {
-  const onSwitchDirective = (v) => {
-    if (directive !== v) {
-      _EE_.emit(_SWITCH_DIRECTIVE_, v);
-    }
-  };
-
   return (
     <Flex vertical>
       <Box
         $current={directive === SELECTION}
-        onClick={() => onSwitchDirective(SELECTION)}
+        onClick={() => onSwitchDirective(SELECTION, directive)}
       >
         <SelectionSvg width="44" height="40" />
       </Box>
       <Box
         $current={directive === HAND}
-        onClick={() => onSwitchDirective(HAND)}
+        onClick={() => onSwitchDirective(HAND, directive)}
         className="hand"
       >
         <HandSvg width="44" height="40" />

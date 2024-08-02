@@ -28,7 +28,7 @@ const SubMenu = ({ directive }) => {
   const submitMapper = Object.assign(
     {},
     BRUSH_MAPPER,
-    MAIN_MAPPER,
+    // MAIN_MAPPER,
     IMAGE_MAPPER
   );
   const submitList = Object.values(submitMapper);
@@ -41,6 +41,8 @@ const SubMenu = ({ directive }) => {
       case TAPE:
       case ERASER:
         return <Brush directive={directive} />;
+      default:
+        return null;
     }
     return null;
   };
