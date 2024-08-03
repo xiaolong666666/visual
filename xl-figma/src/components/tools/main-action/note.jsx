@@ -4,7 +4,7 @@ import Note1 from "@assets/tools-note-1.svg?react";
 import Note2 from "@assets/tools-note-2.svg?react";
 import Note3 from "@assets/tools-note-3.svg?react";
 import { MAIN_MAPPER } from "@constants";
-import { onSwitchDirective } from "@utils";
+import { onFabricSwitchDirective } from "@utils";
 
 const { NOTE } = MAIN_MAPPER;
 
@@ -65,7 +65,7 @@ const Note = ({ directive }) => {
   return (
     <ActionBox
       $current={directive === NOTE}
-      onClick={() => onSwitchDirective(NOTE, directive)}
+      onClick={() => onFabricSwitchDirective(NOTE, directive)}
     >
       <ActionBoxInner className="inner1">
         <NoteBox className="n1">

@@ -5,7 +5,7 @@ import BrushLight from "@assets/tools-brush-light.svg?react";
 import BrushTape from "@assets/brush-tape";
 import BrushEraser from "@assets/brush-eraser";
 import { BRUSH_MAPPER } from "@constants";
-import { onSwitchDirective } from "@utils";
+import { onFabricSwitchDirective } from "@utils";
 
 const { PENCIL, LIGHT, TAPE, ERASER } = BRUSH_MAPPER;
 
@@ -70,7 +70,7 @@ const Brush = ({ directive }) => {
         <FlexItem key={value}>
           <ButtonBox
             $current={directive === value}
-            onClick={() => onSwitchDirective(value, directive)}
+            onClick={() => onFabricSwitchDirective(value, directive)}
           >
             <Icon />
           </ButtonBox>

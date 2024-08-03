@@ -1,4 +1,9 @@
-export const _SWITCH_DIRECTIVE_ = "_switch_directive_";
+export const _FABRIC_SWITCH_DIRECTIVE_ = "_fabric_switch_directive_";
+
+export const _FABRIC_ADD_IMAGE_ = "_fabric_add_image_";
+
+export const _FABRIC_SWITCH_IMAGE_DIRECTIVE_ =
+  "_fabric_switch_image_directive_";
 
 export const BRUSH_MAPPER = {
   PENCIL: "pencil",
@@ -21,6 +26,13 @@ export const STATIC_MAPPER = {
 
 export const IMAGE_MAPPER = {
   IMAGE: "image",
+};
+
+export const IMAGE_DIRECTIVE_MAPPER = {
+  ERASER: "eraser",
+  CROPPER: "cropper",
+  FLIPX: "flipX",
+  FLIPY: "flipY",
 };
 
 export const DIRECTIVE_MAPPER = {

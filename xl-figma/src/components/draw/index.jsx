@@ -2,50 +2,29 @@ import { useState, useEffect, useRef } from "react";
 import { BRUSH_MAPPER } from "@constants";
 import { getBrush } from "@utils/brush";
 import { getCursor } from "@utils/cursor";
+import { useFabric, useFabricWithImage } from "@utils/hooks";
 import "./index.css";
 
 const Draw = ({ directive }) => {
   const canvasRef = useRef(null);
-  const fabricCanvasRef = useRef(null);
+  const fabricRef = useFabric(canvasRef, directive);
   const [cursorClassName, setCursorClassName] = useState("cursor-select");
 
-  useEffect(() => {
-    const options = {
-      isDrawingMode: true,
-      width: window.innerWidth,
-      height: window.innerHeight,
-    };
-
-    const fabricCanvas = new fabric.Canvas(canvasRef.current, options);
-
-    // 设置画笔模式
-    fabricCanvas.freeDrawingBrush = getBrush(directive, fabricCanvas);
-
-    fabricCanvasRef.current = fabricCanvas;
-
-    const resize = () => fabricCanvas.renderAll();
-
-    window.addEventListener("resize", resize);
-
-    return () => {
-      window.removeEventListener("resize", resize);
-      fabricCanvasRef.current.dispose();
-    };
-  }, []);
+  useFabricWithImage(fabricRef.current);
 
   useEffect(() => {
     if (Object.values(BRUSH_MAPPER).includes(directive)) {
-      fabricCanvasRef.current.isDrawingMode = true;
-      fabricCanvasRef.current.freeDrawingBrush = getBrush(
+      fabricRef.current.isDrawingMode = true;
+      fabricRef.current.freeDrawingBrush = getBrush(
         directive,
-        fabricCanvasRef.current,
+        fabricRef.current,
         {}
       );
     } else {
-      fabricCanvasRef.current.isDrawingMode = false;
+      fabricRef.current.isDrawingMode = false;
     }
     setCursorClassName(getCursor(directive));
-  }, [fabricCanvasRef.current, directive]);
+  }, [directive]);
 
   return (
     <div className={cursorClassName}>

@@ -4,7 +4,7 @@ import styled, { css } from "styled-components";
 import SelectionSvg from "@assets/tools-selection.svg?react";
 import HandSvg from "@assets/tools-hand.svg?react";
 import { DIRECTIVE_MAPPER } from "@constants";
-import { onSwitchDirective } from "@utils";
+import { onFabricSwitchDirective } from "@utils";
 
 const { SELECTION, HAND } = DIRECTIVE_MAPPER;
 
@@ -35,13 +35,13 @@ const SelectionHand = ({ directive }) => {
     <Flex vertical>
       <Box
         $current={directive === SELECTION}
-        onClick={() => onSwitchDirective(SELECTION, directive)}
+        onClick={() => onFabricSwitchDirective(SELECTION, directive)}
       >
         <SelectionSvg width="44" height="40" />
       </Box>
       <Box
         $current={directive === HAND}
-        onClick={() => onSwitchDirective(HAND, directive)}
+        onClick={() => onFabricSwitchDirective(HAND, directive)}
         className="hand"
       >
         <HandSvg width="44" height="40" />

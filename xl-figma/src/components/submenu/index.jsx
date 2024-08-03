@@ -2,8 +2,10 @@ import React, { useMemo } from "react";
 import styled, { css } from "styled-components";
 import { BRUSH_MAPPER, MAIN_MAPPER, IMAGE_MAPPER } from "@constants";
 import Brush from "./brush";
+import ImageEdit from "./image-edit";
 
 const { PENCIL, LIGHT, TAPE, ERASER } = BRUSH_MAPPER;
+const { IMAGE } = IMAGE_MAPPER;
 
 const Container = styled.div`
   position: absolute;
@@ -41,10 +43,11 @@ const SubMenu = ({ directive }) => {
       case TAPE:
       case ERASER:
         return <Brush directive={directive} />;
+      case IMAGE:
+        return <ImageEdit directive={directive} />;
       default:
         return null;
     }
-    return null;
   };
 
   return <Container $visible={visible}>{getSubMenu()}</Container>;

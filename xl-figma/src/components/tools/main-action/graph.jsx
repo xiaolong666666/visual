@@ -6,7 +6,7 @@ import GraphRect from "@assets/tools-graph-2.svg?react";
 import GraphTriangle from "@assets/tools-graph-3.svg?react";
 import GraphArrow from "@assets/tools-graph-4.svg?react";
 import { MAIN_MAPPER } from "@constants";
-import { onSwitchDirective } from "@utils";
+import { onFabricSwitchDirective } from "@utils";
 
 const { GRAPH } = MAIN_MAPPER;
 
@@ -47,7 +47,7 @@ const Graph = ({ directive }) => {
   return (
     <ActionBox
       $current={directive === GRAPH}
-      onClick={() => onSwitchDirective(GRAPH, directive)}
+      onClick={() => onFabricSwitchDirective(GRAPH, directive)}
     >
       <Flex vertical className="box-inner">
         <Flex align="base">

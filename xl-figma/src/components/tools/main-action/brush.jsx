@@ -6,7 +6,7 @@ import BrushPencil from "@assets/tools-brush-pencil.svg?react";
 import BrushLight from "@assets/tools-brush-light.svg?react";
 import BrushTape from "@assets/brush-tape";
 import BrushEraser from "@assets/brush-eraser";
-import { onSwitchDirective } from "@utils";
+import { onFabricSwitchDirective } from "@utils";
 
 const { PENCIL, LIGHT, TAPE, ERASER } = BRUSH_MAPPER;
 
@@ -98,7 +98,7 @@ const Brush = ({ directive }) => {
         <BrushTarget
           $directive={directive}
           $isBrush={isBrush}
-          onClick={() => onSwitchDirective(PENCIL, directive)}
+          onClick={() => onFabricSwitchDirective(PENCIL, directive)}
         >
           {getBrushSvg()}
         </BrushTarget>

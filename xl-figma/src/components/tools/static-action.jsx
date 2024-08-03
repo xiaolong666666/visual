@@ -6,7 +6,7 @@ import Section from "@assets/tools-section.svg?react";
 import Table from "@assets/tools-table.svg?react";
 import Stamp from "@assets/tools-stamp.svg?react";
 import { STATIC_MAPPER } from "@constants";
-import { onSwitchDirective } from "@utils";
+import { onFabricSwitchDirective } from "@utils";
 
 const ActionBox = styled.div`
   width: 48px;
@@ -66,7 +66,7 @@ const StaticAction = ({ directive }) => {
         <ActionBox
           key={staticValue}
           $current={directive === staticValue}
-          onClick={() => onSwitchDirective(staticValue, directive)}
+          onClick={() => onFabricSwitchDirective(staticValue, directive)}
           className={className}
         >
           <Icon className="mask" />

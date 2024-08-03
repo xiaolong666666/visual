@@ -3,9 +3,9 @@ import styled from "styled-components";
 import SelectionHand from "./selection-hand";
 import MainAction from "./main-action";
 import SplitLine from "./split-line";
-import { _SWITCH_DIRECTIVE_ } from "../../constants";
-import SubMenu from "../submenu";
 import StaticAction from "./static-action";
+import Ps from "./ps";
+import SubMenu from "../submenu";
 
 const ToolsBox = styled.footer`
   position: fixed;
@@ -31,6 +31,8 @@ const Tools = ({ directive }) => {
       <MainAction directive={directive} />
       <SplitLine />
       <StaticAction directive={directive} />
+      <SplitLine />
+      <Ps directive={directive} />
       <SubMenu directive={directive} />
     </ToolsBox>
   );
